@@ -1,21 +1,132 @@
-* {
-  font-family: Arial, Helvetica, sans-serif;
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-html, body {
-  margin: 0;
-  border: 0;
-  padding: 0;
+.game-container {
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 170px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(5, 57px);
+  grid-template-rows: repeat(6, 57px);
+  gap: 2px;
+  margin-bottom: 20px;
+  margin-left: 70px;
+}
+
+.board div {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #d3d6da;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
   background-color: #fff;
 }
 
-main {
-  margin: auto;
-  width: 50%;
-  padding: 20px;
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
 }
 
-main > h1 {
-  text-align: center;
-  font-size: 3.5em;
+.keyboard .row {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.keyboard button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #d3d6da;
+  border-radius: 5px;
+  background-color: #adb3b3;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.keys{
+  width: 50px !important;
+  background-color: none !important;
+}
+
+.keyboard button:active {
+  background-color: #d3d6da;
+}
+
+.correct {
+  background-color: green !important;
+  color: white !important;
+}
+
+.present {
+  background-color: rgb(207, 207, 104) !important;
+  color: white !important;
+}
+
+.absent {
+  background-color: gray !important;
+  color: white !important;
+}
+
+
+.message {
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+@media (max-width: 600px) {
+
+  .title{
+      margin-left: 70px;
+  }
+
+  .board {
+      gap: 5px;
+      margin-left: 140px;
+  }
+
+  .board div {
+      font-size: 4vw;
+      height: 50px;
+  }
+
+  .keyboard{
+      margin-left: 70px;
+      margin-right: 10px;
+  }
+
+  .keys{
+      width: 200px !important;
+  }
+
+  .keyboard button {
+      width: 10vw;
+      max-width: 45px;
+      height: 10vw;
+      max-height: 45px;
+      font-size: 3vw;
+  }
+
+  .message {
+      margin-left: 100px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+  }
 }
